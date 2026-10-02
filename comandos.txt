@@ -1,0 +1,27 @@
+    1  git config --global user.name `Heitor Lindo´
+    2  clear
+    3  gh auth login
+    4  gh auth login
+    5  git clone https://github.com/engwilsonribeiro/aula20072026-grupo07.git
+    6  cd exemplo-3/
+    7  git clone https://github.com/engwilsonribeiro/aula20072026-grupo07.git
+    8  cd aula20072026-grupo07
+    9  git branch 'heitor rossi'
+   10  git branch 'heitor'
+   11  git switch 'heitor'
+   12  git push origin heitor
+   13  git init
+   14  git config --global user.name 'heitor rossi'
+   15  git config --global user.name 'heitorrossi145@gmail.com'
+   16  git add .
+   17  git commit -m'primeiro projeto'
+   18  git config --global user.name 'heitor rossi'
+   19  git config --global user.email 'heitorrossi145@gmail.com'
+   20  git commit -m'primeiro projeto'
+   21  git remote add origin https://github.com/engwilsonribeiro/tmu-1jbb-26-grp05.git
+   22  git branch -M main
+   23  git push origin main
+   24  git branch heitor
+   25  git switch heitor
+   26  history
+   27  history >> comandos.txt
