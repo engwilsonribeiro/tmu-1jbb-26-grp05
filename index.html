@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Raiz de Aço — leilões de gado, touros de rodeio e animais selecionados.">
+  <title>Raiz de Aço | Leilões de Gado</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+  <a href="#inicio" class="brand">
+    <img src="assets/imagens/logo.png" alt="Raiz de Aço" class="brand-logo">
+
+    <span>
+      <strong>RAIZ DE AÇO</strong>
+      <small>LEILÕES • GADO • RODEIO</small>
+    </span>
+  </a>
+
+  <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+  <nav class="menu">
+    <a href="#inicio">Início</a>
+    <a href="#gado">Gados</a>
+    <a href="#rodeio">Touros de Rodeio</a>
+    <a href="#leiloes">Leilões</a>
+    <a href="#sobre">A Raiz de Aço</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <a href="#gado" class="header-cta">Ver animais</a>
+
+</header>
+
+<main id="inicio">
+
+  <section class="hero">
+
+    <div class="hero-copy">
+
+      <span class="eyebrow">NEGÓCIOS QUE NASCEM NO CAMPO</span>
+
+      <h1>
+        Força no campo.<br>
+        <em>Valor no negócio.</em>
+      </h1>
+
+      <p>
+        Gado selecionado, touros de rodeio e leilões pensados para quem conhece o valor de um animal de qualidade.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#gado">
+          Explorar animais <span>→</span>
+        </a>
+
+        <a class="btn btn-ghost" href="#leiloes">
+          Próximos leilões
+        </a>
+      </div>
+
+      <div class="hero-trust">
+
+        <div>
+          <strong>Seleção</strong>
+          <span>Animais avaliados</span>
+        </div>
+
+        <div>
+          <strong>Transparência</strong>
+          <span>Informações do lote</span>
+        </div>
+
+        <div>
+          <strong>Confiança</strong>
+          <span>Negócios seguros</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+      <div class="hero-ring"></div>
+
+      <div class="hero-image">
+        <img src="assets/imagens/gado1P.jpg" alt="Nelore selecionado">
+      </div>
+
+      <div class="floating-card">
+
+        <span class="dot"></span>
+
+        <div>
+          <small>LOTE EM DESTAQUE</small>
+          <strong>Nelore Premium</strong>
+          <b>R$ 8.500</b>
+        </div>
+
+      </div>
+
+      <span class="vertical-word">RAIZ DE AÇO</span>
+
+    </div>
+
+  </section>
+
+
+  <section class="stats">
+
+    <div>
+      <strong>500<span>+</span></strong>
+      <p>animais negociados</p>
+    </div>
+
+    <div>
+      <strong>30<span>+</span></strong>
+      <p>leilões realizados</p>
+    </div>
+
+    <div>
+      <strong>150<span>+</span></strong>
+      <p>clientes ativos</p>
+    </div>
+
+    <div>
+      <strong>100<span>%</span></strong>
+      <p>compromisso</p>
+    </div>
+
+  </section>
+
+
+  <section class="section" id="gado">
+
+    <div class="section-top">
+
+      <div>
+        <span class="eyebrow blue">CATÁLOGO DE ANIMAIS</span>
+        <h2>Gados disponíveis</h2>
+      </div>
+
+      <p>
+        Escolha um lote, confira as especificações e veja até quando ele ficará disponível.
+      </p>
+
+    </div>
+
+
+    <div class="filters">
+
+      <button class="filter active" data-filter="todos">Todos</button>
+      <button class="filter" data-filter="nelore">Nelore</button>
+      <button class="filter" data-filter="angus">Angus</button>
+      <button class="filter" data-filter="reprodutor">Reprodutores</button>
+
+    </div>
+
+
+    <div class="animal-grid">
+
+      <article class="animal-card" data-category="nelore">
+
+        <div class="animal-photo">
+
+          <img src="assets/imagens/gado1P.jpg" alt="Boi Nelore Premium">
+
+          <span class="available">DISPONÍVEL</span>
+          <span class="lot">LOTE 001</span>
+
+        </div>
+
+        <div class="animal-body">
+
+          <div class="animal-heading">
+            <span>NELORE</span>
+
+            <small>
+              Expira em
+              <b class="countdown" data-date="2026-09-15T23:59:59"></b>
+            </small>
+          </div>
+
+          <h3>Boi Nelore Premium</h3>
+
+          <div class="specs">
+            <span><b>30</b> meses</span>
+            <span><b>800</b> kg</span>
+            <span><b>♂</b> macho</span>
+          </div>
+
+          <div class="animal-bottom">
+
+            <div>
+              <small>A partir de</small>
+              <strong>R$ 8.500</strong>
+            </div>
+
+            <button onclick="openAnimal('Boi Nelore Premium','Nelore','24 meses','520 kg','R$ 8.500','assets/imagens/nelore_premium.jpg','15/09/2026')">
+              Detalhes →
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="animal-card" data-category="reprodutor">
+
+        <div class="animal-photo">
+
+          <img src="assets/imagens/gado1R.jpg" alt="Nelore Reprodutor">
+
+          <span class="available">DISPONÍVEL</span>
+          <span class="lot">LOTE 002</span>
+
+        </div>
+
+        <div class="animal-body">
+
+          <div class="animal-heading">
+            <span>REPRODUTOR</span>
+
+            <small>
+              Expira em
+              <b class="countdown" data-date="2026-09-20T23:59:59"></b>
+            </small>
+          </div>
+
+          <h3>Nelore Reprodutor</h3>
+
+          <div class="specs">
+            <span><b>22</b> meses</span>
+            <span><b>600</b> kg</span>
+            <span><b>♂</b> macho</span>
+          </div>
+
+          <div class="animal-bottom">
+
+            <div>
+              <small>A partir de</small>
+              <strong>R$ 11.900</strong>
+            </div>
+
+            <button onclick="openAnimal('Nelore Reprodutor','Nelore','30 meses','610 kg','R$ 11.900','assets/imagens/nelore_reprodutor.jpg','20/09/2026')">
+              Detalhes →
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="animal-card" data-category="angus">
+
+        <div class="animal-photo">
+
+          <img src="assets/imagens/angus1.jpg" alt="Boi Angus Selecionado">
+
+          <span class="available">DISPONÍVEL</span>
+          <span class="lot">LOTE 003</span>
+
+        </div>
+
+        <div class="animal-body">
+
+          <div class="animal-heading">
+            <span>ANGUS</span>
+
+            <small>
+              Expira em
+              <b class="countdown" data-date="2026-09-25T23:59:59"></b>
+            </small>
+          </div>
+
+          <h3>Boi Angus Selecionado</h3>
+
+          <div class="specs">
+            <span><b>24</b> meses</span>
+            <span><b>715</b> kg</span>
+            <span><b>♂</b> macho</span>
+          </div>
+
+          <div class="animal-bottom">
+
+            <div>
+              <small>A partir de</small>
+              <strong>R$ 10.500</strong>
+            </div>
+
+            <button onclick="openAnimal('Boi Angus Selecionado','Angus','26 meses','570 kg','R$ 10.500','assets/imagens/boi_angus_selecionado.jpg','25/09/2026')">
+              Detalhes →
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <section class="feature" id="rodeio">
+
+    <div class="feature-image">
+
+      <img src="assets/imagens/rodeio1.jpg" alt="Touro para rodeio">
+
+      <div class="feature-label">
+        <strong>RODEIO</strong>
+        <span>Força • genética • presença</span>
+      </div>
+
+    </div>
+
+
+    <div class="feature-copy">
+
+      <span class="eyebrow blue">TOUROS DE RODEIO</span>
+
+      <h2>
+        Animais que entram na arena para fazer história.
+      </h2>
+
+      <p>
+        Uma área dedicada aos touros de rodeio, com informações do animal, características, disponibilidade e condições para negociação.
+      </p>
+
+      <div class="feature-points">
+
+        <div>
+          <span>01</span>
+
+          <p>
+            <b>Potência</b>
+            <small>Animais selecionados para alto desempenho.</small>
+          </p>
+        </div>
+
+        <div>
+          <span>02</span>
+
+          <p>
+            <b>Procedência</b>
+            <small>Informações claras sobre cada lote.</small>
+          </p>
+        </div>
+
+        <div>
+          <span>03</span>
+
+          <p>
+            <b>Negociação</b>
+            <small>Contato direto para demonstrar interesse.</small>
+          </p>
+        </div>
+
+      </div>
+
+      <a href="#contato" class="btn btn-dark">
+        Tenho interesse em um touro →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <section class="section auctions" id="leiloes">
+
+    <div class="section-top">
+
+      <div>
+        <span class="eyebrow blue">AGENDA</span>
+        <h2>Próximos leilões</h2>
+      </div>
+
+      <p>
+        Fique de olho nas datas e participe dos próximos eventos da Raiz de Aço.
+      </p>
+
+    </div>
+
+
+    <div class="auction-grid">
+
+      <article class="auction">
+
+        <div class="date">
+          <small>SET</small>
+          <strong>06</strong>
+          <span>2026</span>
+        </div>
+
+        <div class="auction-content">
+          <span>LEILÃO ONLINE</span>
+          <h3>Especial Gado de Corte</h3>
+          <p>19:30 • Lotes selecionados</p>
+        </div>
+
+        <button onclick="showToast('Interesse registrado! Entraremos em contato sobre este leilão.')">
+          Participar →
+        </button>
+
+      </article>
+
+
+      <article class="auction featured-auction">
+
+        <div class="date">
+          <small>SET</small>
+          <strong>13</strong>
+          <span>2026</span>
+        </div>
+
+        <div class="auction-content">
+          <span>LEILÃO ONLINE • DESTAQUE</span>
+          <h3>Grande Leilão de Reprodutores</h3>
+          <p>20:00 • Animais selecionados</p>
+        </div>
+
+        <button onclick="showToast('Interesse registrado! Entraremos em contato sobre este leilão.')">
+          Participar →
+        </button>
+
+      </article>
+
+
+      <article class="auction">
+
+        <div class="date">
+          <small>SET</small>
+          <strong>27</strong>
+          <span>2026</span>
+        </div>
+
+        <div class="auction-content">
+          <span>LEILÃO ONLINE</span>
+          <h3>Raiz de Aço • Edição Especial</h3>
+          <p>19:00 • Gado e reprodutores</p>
+        </div>
+
+        <button onclick="showToast('Interesse registrado! Entraremos em contato sobre este leilão.')">
+          Participar →
+        </button>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <section class="about" id="sobre">
+
+    <div class="about-inner">
+
+      <div>
+        <span class="eyebrow">A RAIZ DE AÇO</span>
+        <h2>Do campo para grandes negócios.</h2>
+      </div>
+
+      <div>
+
+        <p>
+          A Raiz de Aço aproxima produtores e compradores por meio de uma experiência moderna de comercialização de gado e touros de rodeio.
+        </p>
+
+        <p>
+          Nosso foco é apresentar cada animal com clareza, facilitar o contato e valorizar a qualidade que começa no campo.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="contact section" id="contato">
+
+    <div class="contact-card">
+
+      <div>
+
+        <span class="eyebrow blue">FALE COM A RAIZ DE AÇO</span>
+
+        <h2>Encontrou o animal certo?</h2>
+
+        <p>
+          Envie seus dados e diga qual lote ou touro despertou seu interesse.
+        </p>
+
+      </div>
+
+
+      <form id="contactForm">
+
+        <input id="nome" type="text" placeholder="Seu nome" required>
+
+        <input id="telefone" type="tel" placeholder="Seu WhatsApp / telefone" required>
+
+        <input id="email" type="email" placeholder="Seu e-mail" required>
+
+        <textarea id="mensagem" placeholder="Qual animal ou leilão você deseja conhecer?" required></textarea>
+
+        <button class="btn btn-primary" type="submit">
+          Enviar mensagem →
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-brand">
+
+    <img src="assets/imagens/logo.png" alt="Raiz de Aço">
+
+    <div>
+      <strong>RAIZ DE AÇO</strong>
+      <span>LEILÕES • GADO • RODEIO</span>
+    </div>
+
+  </div>
+
+  <p>© 2026 Raiz de Aço. Todos os direitos reservados.</p>
+
+</footer>
+
+
+<div class="modal" id="animalModal" aria-hidden="true">
+
+  <div class="modal-box">
+
+    <button class="modal-close" onclick="closeAnimal()">×</button>
+
+    <img id="modalImg" src="" alt="">
+
+    <span id="modalType" class="eyebrow blue"></span>
+
+    <h2 id="modalName"></h2>
+
+    <div class="modal-specs">
+
+      <p>
+        <b>Idade</b>
+        <span id="modalAge"></span>
+      </p>
+
+      <p>
+        <b>Peso</b>
+        <span id="modalWeight"></span>
+      </p>
+
+      <p>
+        <b>Preço</b>
+        <span id="modalPrice"></span>
+      </p>
+
+    </div>
+
+    <div class="expiry">
+      Disponível até <strong id="modalExpiry"></strong>
+    </div>
+
+    <button class="btn btn-primary full" onclick="interest()">
+      Tenho interesse neste animal →
+    </button>
+
+  </div>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
