@@ -167,7 +167,152 @@
     </div>
 
 
-    <div class="animal-grid">
+    <div class="animal-carousel">
+
+      <div class="animal-grid" id="animalTrack" aria-label="Carrossel de animais">
+
+      <article class="animal-card" data-category="nelore">
+
+        <div class="animal-photo">
+
+          <img src="assets/imagens/gado1P.jpg" alt="Boi Nelore Premium">
+
+          <span class="available">DISPONÍVEL</span>
+          <span class="lot">LOTE 001</span>
+
+          </div>
+
+        <div class="animal-body">
+
+          <div class="animal-heading">
+            <span>NELORE</span>
+
+            <small>
+              Expira em
+              <b class="countdown" data-date="2026-09-15T23:59:59"></b>
+            </small>
+          </div>
+
+          <h3>Boi Nelore Premium</h3>
+
+          <div class="specs">
+            <span><b>30</b> meses</span>
+            <span><b>800</b> kg</span>
+            <span><b>♂</b> macho</span>
+          </div>
+
+          <div class="animal-bottom">
+
+            <div>
+              <small>A partir de</small>
+              <strong>R$ 8.500</strong>
+            </div>
+
+            <button onclick="openAnimal('Boi Nelore Premium','Nelore','24 meses','520 kg','R$ 8.500','assets/imagens/nelore_premium.jpg','15/09/2026')">
+              Detalhes →
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="animal-card" data-category="reprodutor">
+
+        <div class="animal-photo">
+
+          <img src="assets/imagens/gado1R.jpg" alt="Nelore Reprodutor">
+
+          <span class="available">DISPONÍVEL</span>
+          <span class="lot">LOTE 002</span>
+
+        </div>
+
+        <div class="animal-body">
+
+          <div class="animal-heading">
+            <span>REPRODUTOR</span>
+
+            <small>
+              Expira em
+              <b class="countdown" data-date="2026-09-20T23:59:59"></b>
+            </small>
+          </div>
+
+          <h3>Nelore Reprodutor</h3>
+
+          <div class="specs">
+            <span><b>22</b> meses</span>
+            <span><b>600</b> kg</span>
+            <span><b>♂</b> macho</span>
+          </div>
+
+          <div class="animal-bottom">
+
+            <div>
+              <small>A partir de</small>
+              <strong>R$ 11.900</strong>
+            </div>
+
+            <button onclick="openAnimal('Nelore Reprodutor','Nelore','30 meses','610 kg','R$ 11.900','assets/imagens/nelore_reprodutor.jpg','20/09/2026')">
+              Detalhes →
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="animal-card" data-category="angus">
+
+        <div class="animal-photo">
+
+          <img src="assets/imagens/angus1.jpg" alt="Boi Angus Selecionado">
+
+          <span class="available">DISPONÍVEL</span>
+          <span class="lot">LOTE 003</span>
+
+        </div>
+
+        <div class="animal-body">
+
+          <div class="animal-heading">
+            <span>ANGUS</span>
+
+            <small>
+              Expira em
+              <b class="countdown" data-date="2026-09-25T23:59:59"></b>
+            </small>
+          </div>
+
+          <h3>Boi Angus Selecionado</h3>
+
+          <div class="specs">
+            <span><b>24</b> meses</span>
+            <span><b>715</b> kg</span>
+            <span><b>♂</b> macho</span>
+          </div>
+
+          <div class="animal-bottom">
+
+            <div>
+              <small>A partir de</small>
+              <strong>R$ 10.500</strong>
+            </div>
+
+            <button onclick="openAnimal('Boi Angus Selecionado','Angus','26 meses','570 kg','R$ 10.500','assets/imagens/boi_angus_selecionado.jpg','25/09/2026')">
+              Detalhes →
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
 
       <article class="animal-card" data-category="nelore">
 
@@ -311,6 +456,29 @@
         </div>
 
       </article>
+
+
+
+
+
+    </div>
+
+      <div class="carousel-controls">
+        <div
+          class="carousel-progress"
+          role="progressbar"
+          aria-label="Progresso do carrossel de animais"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0">
+          <span class="carousel-progress-bar" id="animalProgress"></span>
+        </div>
+
+        <div class="carousel-arrows">
+          <button id="animalPrev" type="button" aria-label="Animais anteriores" disabled>←</button>
+          <button id="animalNext" type="button" aria-label="Próximos animais">→</button>
+        </div>
+      </div>
 
     </div>
 
@@ -598,7 +766,7 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="script.js"></script>
+<script src="assets/JS/script.js"></script>
 
 </body>
 </html>
