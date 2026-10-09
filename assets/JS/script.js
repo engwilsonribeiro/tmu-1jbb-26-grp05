@@ -12,6 +12,23 @@ document.querySelectorAll(".menu a").forEach(a => {
 });
 
 
+const animalTrack = document.getElementById("animalTrack");
+const animalProgress = document.getElementById("animalProgress");
+const animalProgressTrack = document.querySelector(".carousel-progress");
+const animalPrev = document.getElementById("animalPrev");
+const animalNext = document.getElementById("animalNext");
+
+function updateAnimalCarousel() {
+  const maxScroll = animalTrack.scrollWidth - animalTrack.clientWidth;
+  const scrollLeft = animalTrack.scrollLeft;
+  const progress = maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0;
+
+  animalPrev.disabled = scrollLeft <= 5;
+  animalNext.disabled = maxScroll <= 5 || scrollLeft >= maxScroll - 5;
+  animalProgress.style.width = `${progress}%`;
+  animalProgressTrack.setAttribute("aria-valuenow", `${Math.round(progress)}`);
+}
+
 document.querySelectorAll(".filter").forEach(btn => {
 
   btn.addEventListener("click", () => {
@@ -25,17 +42,65 @@ document.querySelectorAll(".filter").forEach(btn => {
     const filter = btn.dataset.filter;
 
     document.querySelectorAll(".animal-card").forEach(card => {
-
-      card.style.display =
-        (filter === "todos" || card.dataset.category === filter)
-          ? "block"
-          : "none";
-
+      card.hidden = filter !== "todos" && card.dataset.category !== filter;
     });
+
+    animalTrack.scrollTo({ left: 0, behavior: "smooth" });
+    updateAnimalCarousel();
 
   });
 
 });
+
+animalPrev.addEventListener("click", () => {
+  const card = animalTrack.querySelector(".animal-card:not([hidden])");
+  const gap = parseFloat(getComputedStyle(animalTrack).gap) || 0;
+  animalTrack.scrollBy({
+    left: -(card.offsetWidth + gap),
+    behavior: "smooth"
+  });
+});
+
+animalNext.addEventListener("click", () => {
+  const card = animalTrack.querySelector(".animal-card:not([hidden])");
+  const gap = parseFloat(getComputedStyle(animalTrack).gap) || 0;
+  animalTrack.scrollBy({
+    left: card.offsetWidth + gap,
+    behavior: "smooth"
+  });
+});
+
+animalTrack.addEventListener("scroll", updateAnimalCarousel);
+window.addEventListener("resize", updateAnimalCarousel);
+
+let isDragging = false;
+let dragStartX = 0;
+let dragStartScroll = 0;
+
+animalTrack.addEventListener("mousedown", event => {
+  if (event.target.closest("button")) return;
+
+  isDragging = true;
+  dragStartX = event.pageX;
+  dragStartScroll = animalTrack.scrollLeft;
+});
+
+animalTrack.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+animalTrack.addEventListener("mouseleave", () => {
+  isDragging = false;
+});
+
+animalTrack.addEventListener("mousemove", event => {
+  if (!isDragging) return;
+
+  event.preventDefault();
+  animalTrack.scrollLeft = dragStartScroll - (event.pageX - dragStartX);
+});
+
+updateAnimalCarousel();
 
 
 function countdownText(date) {
