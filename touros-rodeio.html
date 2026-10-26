@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Touros de Rodeio | Raiz de Aço</title>
+
+  <link rel="stylesheet" href="assets/CSS/style.css">
+
+  <style>
+    .touros-hero {
+      padding: 90px 20px;
+      color: white;
+      background:
+  url("assets/imagens/touro.png") center/cover;
+    }
+    .touros-container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    .touros-hero h1 {
+      max-width: 750px;
+      font-size: clamp(36px, 5vw, 60px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .touros-hero p {
+      max-width: 650px;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .touros-catalogo {
+      padding: 65px 0;
+      background: #F4F8FB;
+    }
+
+    .touros-titulo {
+      margin-bottom: 35px;
+    }
+
+    .touros-titulo span {
+      color: #C9A24A;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .touros-titulo h2 {
+      color: #10202E;
+      font-size: clamp(28px, 4vw, 40px);
+      margin: 10px 0;
+    }
+
+    .touros-titulo p {
+      color: #667787;
+      line-height: 1.7;
+    }
+
+    .touros-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .touro-card {
+      overflow: hidden;
+      background: white;
+      border: 1px solid #DCE6ED;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    }
+
+    .touro-card img {
+      display: block;
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .touro-conteudo {
+      padding: 22px;
+    }
+
+    .touro-lote {
+      color: #00569D;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .touro-conteudo h3 {
+      color: #10202E;
+      font-size: 23px;
+      margin: 10px 0;
+    }
+
+    .touro-conteudo p {
+      color: #667787;
+      line-height: 1.6;
+    }
+
+    .touro-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 15px 0;
+      margin-top: 15px;
+      border-top: 1px solid #DCE6ED;
+      border-bottom: 1px solid #DCE6ED;
+    }
+
+    .touro-info small {
+      display: block;
+      color: #667787;
+    }
+
+    .touro-info strong {
+      display: block;
+      margin-top: 5px;
+      color: #10202E;
+    }
+
+    .touro-valor {
+      margin: 18px 0;
+      color: #003D70;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .touro-botao {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 7px;
+      background: #003D70;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .touro-botao:hover {
+      background: #00569D;
+    }
+
+    .touro-detalhes {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 7px;
+      background: #F4F8FB;
+      color: #667787;
+      line-height: 1.6;
+    }
+
+    .touro-detalhes.aberto {
+      display: block;
+    }
+
+    .touros-contato {
+      padding: 55px 20px;
+      background: #032B4D;
+      color: white;
+      text-align: center;
+    }
+
+    .touros-contato h2 {
+      font-size: clamp(25px, 4vw, 36px);
+      margin-bottom: 15px;
+    }
+
+    .touros-contato p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      line-height: 1.7;
+      color: #E0E8EF;
+    }
+
+    .touros-contato .btn {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .touros-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .touros-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .touros-hero {
+        padding: 65px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <a href="index.html" class="brand">
+    <img src="assets/imagens/logo.png" alt="Raiz de Aço" class="brand-logo">
+
+    <span>
+      <strong>RAIZ DE AÇO</strong>
+      <small>LEILÕES • GADO • RODEIO</small>
+    </span>
+  </a>
+
+  <button class="menu-toggle" type="button" aria-label="Abrir menu">
+    ☰
+  </button>
+
+  <nav class="menu">
+    <a href="index.html#inicio">Início</a>
+    <a href="index.html#gado">Gados</a>
+    <a href="index.html#rodeio">Touros de Rodeio</a>
+    <a href="index.html#leiloes">Leilões</a>
+    <a href="index.html#sobre">A Raiz de Aço</a>
+    <a href="index.html#contato">Contato</a>
+  </nav>
+
+  <a href="index.html#gado" class="header-cta">Ver animais</a>
+</header>
+
+  <main>
+
+    <section class="touros-hero">
+      <div class="touros-container">
+
+        <p style="color:#E5C66F;font-weight:bold;letter-spacing:2px;">
+          RAIZ DE AÇO • LINHA RODEIO
+        </p>
+
+        <h1>
+          Touros de rodeio prontos para fazer história.
+        </h1>
+
+        <p>
+          Confira os animais disponíveis e entre em contato
+          para saber mais sobre suas características e condições
+          de negociação.
+        </p>
+
+        <a href="#catalogo" class="btn btn-primary">
+          Ver touros disponíveis 
+        </a>
+
+      </div>
+    </section>
+
+    <section class="touros-catalogo" id="catalogo">
+      <div class="touros-container">
+
+        <div class="touros-titulo">
+          <span>Nosso catálogo</span>
+          <h2>Touros disponíveis para venda</h2>
+          <p>
+            Conheça os animais e consulte os detalhes de cada lote.
+          </p>
+        </div>
+
+        <div class="touros-grid">
+
+          <!-- TOURO 1 -->
+          <article class="touro-card">
+
+            <img
+              src="assets/imagens/rodeio1.jpg"
+              alt="Touro de rodeio lote 01"
+              loading="lazy"
+            >
+
+            <div class="touro-conteudo">
+              <span class="touro-lote">LOTE 01 • RODEIO</span>
+
+              <h3>Bipolar</h3>
+
+              <p>
+                Consulte nossa equipe para conhecer melhor este animal.
+              </p>
+
+              <div class="touro-info">
+                <div>
+                  <small>Idade</small>
+                  <strong>A consultar</strong>
+                </div>
+
+                <div>
+                  <small>Peso</small>
+                  <strong>A consultar</strong>
+                </div>
+              </div>
+
+              <div class="touro-valor">Sob consulta</div>
+
+              <button class="touro-botao" type="button">
+                Ver detalhes 
+              </button>
+
+              <div class="touro-detalhes">
+                Entre em contato para receber informações sobre
+                origem, idade, peso, histórico e negociação.
+              </div>
+            </div>
+
+          </article>
+
+          <!-- TOURO 2 -->
+          <article class="touro-card">
+
+            <img
+              src="assets/imagens/rodeio1.jpg"
+              alt="Touro de rodeio lote 02"
+              loading="lazy"
+            >
+
+            <div class="touro-conteudo">
+              <span class="touro-lote">LOTE 02 • RODEIO</span>
+
+              <h3>Coronel</h3>
+
+              <p>
+                Entre em contato para consultar a disponibilidade.
+              </p>
+
+              <div class="touro-info">
+                <div>
+                  <small>Idade</small>
+                  <strong>A consultar</strong>
+                </div>
+
+                <div>
+                  <small>Peso</small>
+                  <strong>A consultar</strong>
+                </div>
+              </div>
+
+              <div class="touro-valor">Sob consulta</div>
+
+              <button class="touro-botao" type="button">
+                Ver detalhes 
+              </button>
+
+              <div class="touro-detalhes">
+                Solicite informações sobre as características do
+                animal e as condições de negociação.
+              </div>
+            </div>
+
+          </article>
+
+          <!-- TOURO 3 -->
+          <article class="touro-card">
+
+            <img
+              src="assets/imagens/rodeio1.jpg"
+              alt="Touro de rodeio lote 03"
+              loading="lazy"
+            >
+
+            <div class="touro-conteudo">
+              <span class="touro-lote">LOTE 03 • RODEIO</span>
+
+              <h3>Silverado</h3>
+
+              <p>
+                Consulte nossa equipe para obter mais informações.
+              </p>
+
+              <div class="touro-info">
+                <div>
+                  <small>Idade</small>
+                  <strong>A consultar</strong>
+                </div>
+
+                <div>
+                  <small>Peso</small>
+                  <strong>A consultar</strong>
+                </div>
+              </div>
+
+              <div class="touro-valor">Sob consulta</div>
+
+              <button class="touro-botao" type="button">
+                Ver detalhes 
+              </button>
+
+              <div class="touro-detalhes">
+                Entre em contato para verificar disponibilidade,
+                dados do animal e condições de compra.
+              </div>
+            </div>
+
+          </article>
+
+        </div>
+
+        <p style="margin-top:25px;color:#667787;font-size:13px;line-height:1.7;">
+          Atenção: os nomes, lotes e dados apresentados são exemplos.
+          Substitua pelas informações reais antes de publicar.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="touros-contato">
+      <h2>Interessado em um dos nossos touros?</h2>
+
+      <p>
+        Fale com a equipe da Raiz de Aço para consultar
+        disponibilidade e condições de negociação.
+      </p>
+
+      <a href="index.html#contato" class="btn btn-primary">
+        Tenho interesse em um touro →
+      </a>
+    </section>
+
+  </main>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    menuToggle?.addEventListener("click", () => {
+      menu?.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        menu?.classList.remove("open");
+      });
+    });
+
+    document.querySelectorAll(".touro-botao").forEach(button => {
+      button.addEventListener("click", () => {
+        const detalhes = button.nextElementSibling;
+        const aberto = detalhes.classList.toggle("aberto");
+
+        button.textContent = aberto
+          ? "Ocultar detalhes −"
+          : "Ver detalhes +";
+      });
+    });
+  </script>
+
+</body>
+</html>
