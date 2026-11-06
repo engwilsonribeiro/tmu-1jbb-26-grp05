@@ -1,11 +1,263 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tire dúvidas e saiba como solicitar a análise de um reembolso na Raiz de Aço.">
+  <title>Ajuda | Raiz de Aço</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/CSS/style.css">
+
+  <style>
+    .help-hero {
+      background: linear-gradient(120deg, #f7fafc 0%, #fff 55%, #e9f2f8 100%);
+      padding: 78px 7% 72px;
+    }
+
+    .help-hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .help-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .help-hero h1 {
+      max-width: 700px;
+      margin: 16px 0;
+      color: var(--blue-deep);
+      font: 600 clamp(42px, 6vw, 68px)/1.05 Oswald, sans-serif;
+      text-transform: uppercase;
+    }
+
+    .help-hero p {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .help-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 64px 24px 80px;
+    }
+
+    .help-panel {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 15px 45px rgba(18, 52, 74, .06);
+    }
+
+    .help-panel h2 {
+      margin: 8px 0 12px;
+      color: var(--blue-deep);
+      font: 600 32px/1.15 Oswald, sans-serif;
+    }
+
+    .help-intro,
+    .help-note {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .help-form {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .help-form label {
+      display: grid;
+      gap: 7px;
+      color: var(--blue-deep);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .help-form input,
+    .help-form select,
+    .help-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+    }
+
+    .help-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .help-form input:focus,
+    .help-form select:focus,
+    .help-form textarea:focus {
+      border-color: var(--blue);
+      outline: 2px solid rgba(38, 91, 125, .15);
+    }
+
+    .help-contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border: 0;
+      border-radius: 7px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .help-contact:hover {
+      transform: translateY(-2px);
+      background: var(--blue-dark);
+    }
+
+    @media (max-width: 800px) {
+      .help-content {
+        grid-template-columns: 1fr;
+        padding: 42px 5% 60px;
+      }
+
+      .help-hero {
+        padding: 62px 6%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .help-panel {
+        padding: 25px 20px;
+      }
+
+      .help-hero p {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Ajuda</h1>
+  <header class="header">
+    <a href="index.html#inicio" class="brand">
+      <img src="assets/imagens/logo.png" alt="Raiz de Aço" class="brand-logo">
+      <span>
+        <strong>RAIZ DE AÇO</strong>
+        <small>LEILÕES • GADO • RODEIO</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="index.html#inicio">Início</a>
+      <a href="index.html#gado">Gados</a>
+      <a href="index.html#rodeio">Touros de Rodeio</a>
+      <a href="index.html#leiloes">Leilões</a>
+      <a href="index.html#sobre">A Raiz de Aço</a>
+      <a href="index.html#contato">Contato</a>
+      <a href="ajuda.html" aria-current="page">Ajuda</a>
+    </nav>
+    <a href="index.html#contato" class="header-cta">Fale conosco</a>
+  </header>
+
+  <main>
+    <section class="help-hero">
+      <div class="help-hero-inner">
+        <span class="eyebrow blue">CENTRAL DE AJUDA</span>
+        <h1>Precisa de ajuda?</h1>
+        <p>Peça a análise de um reembolso ou relate um problema. Preencha o formulário e enviaremos sua mensagem pelo WhatsApp.</p>
+      </div>
+    </section>
+
+    <div class="help-content">
+      <section class="help-panel" aria-labelledby="help-form-title">
+        <span class="eyebrow blue">FALE COM A EQUIPE RAIZ DE AÇO</span>
+        <h2 id="help-form-title">Como podemos ajudar?</h2>
+        <p class="help-intro">Conte o que aconteceu para a equipe entender sua solicitação. O pedido de reembolso será analisado conforme as condições da negociação.</p>
+
+        <form class="help-form" id="helpRequestForm">
+          <label for="helpRequestType">
+            Motivo do contato
+            <select id="helpRequestType" required>
+              <option value="Solicitação de análise de reembolso">Quero solicitar um reembolso</option>
+              <option value="Relato de problema">Quero relatar um problema</option>
+            </select>
+          </label>
+          <label for="helpName">
+            Seu nome
+            <input id="helpName" type="text" autocomplete="name" required>
+          </label>
+          <label for="helpNegotiation">
+            Número do lote ou leilão (opcional)
+            <input id="helpNegotiation" type="text">
+          </label>
+          <label for="helpDescription">
+            Descreva brevemente sua solicitação
+            <textarea id="helpDescription" required></textarea>
+          </label>
+          <button class="help-contact" type="submit">Continuar pelo WhatsApp →</button>
+        </form>
+        <p class="help-note">O WhatsApp abrirá com a mensagem pronta. Escolha o contato da equipe e toque em enviar. Quando a equipe estiver disposta irá te responder o mais rápido possível, (não trabalhamos ao feriados!). Não informe senhas nem dados completos do cartão.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      <img src="assets/imagens/logo.png" alt="">
+      <div>
+        <strong>RAIZ DE AÇO</strong>
+        <span>LEILÕES • GADO • RODEIO</span>
+      </div>
+    </div>
+    <p>© 2026 Raiz de Aço. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.getElementById("helpRequestForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const requestType = document.getElementById("helpRequestType").value;
+      const name = document.getElementById("helpName").value.trim();
+      const negotiation = document.getElementById("helpNegotiation").value.trim();
+      const description = document.getElementById("helpDescription").value.trim();
+      const message = [
+        `Olá! Gostaria de fazer uma ${requestType.toLocaleLowerCase("pt-BR")}.`,
+        `Nome: ${name}`,
+        negotiation ? `Lote/leilão: ${negotiation}` : "",
+        `Descrição: ${description}`
+      ].filter(Boolean).join("\n");
+      const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    });
+  </script>
 </body>
 </html>
