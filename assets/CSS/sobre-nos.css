@@ -1,0 +1,801 @@
+/* =========================================
+   RAIZ DE AÇO - PÁGINA SOBRE NÓS
+   CSS INDEPENDENTE DA PÁGINA PRINCIPAL
+========================================= */
+
+.ra-equipe {
+    --ra-blue: #00569D;
+    --ra-blue-dark: #003D70;
+    --ra-blue-deep: #032B4D;
+    --ra-ink: #10202E;
+    --ra-muted: #667787;
+    --ra-line: #DCE6ED;
+    --ra-light: #F4F8FB;
+    --ra-gold: #C9A24A;
+    --ra-white: #ffffff;
+
+    margin: 0;
+    padding: 0;
+    font-family: "DM Sans", Arial, sans-serif;
+    color: var(--ra-ink);
+    background: #fff;
+    overflow-x: hidden;
+}
+
+
+
+.ra-equipe *,
+.ra-equipe *::before,
+.ra-equipe *::after {
+    box-sizing: border-box;
+}
+
+.ra-equipe a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.ra-equipe img {
+    max-width: 100%;
+    display: block;
+}
+
+.ra-equipe button {
+    font: inherit;
+}
+
+/* CABEÇALHO */
+
+.ra-header {
+    min-height: 82px;
+    padding: 12px 5.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: rgba(255, 255, 255, .97);
+    border-bottom: 1px solid var(--ra-line);
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+}
+
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+
+
+.ra-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.ra-brand img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 2px solid var(--ra-blue);
+    padding: 2px;
+    background: #fff;
+}
+
+.ra-brand span {
+    display: flex;
+    flex-direction: column;
+}
+
+.ra-brand strong {
+    font-family: Oswald, sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--ra-blue-deep);
+}
+
+.ra-brand small {
+    font-size: 8px;
+    letter-spacing: 1.7px;
+    color: var(--ra-muted);
+    margin-top: 2px;
+}
+
+.ra-menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+
+
+
+.ra-menu a {
+    font-size: 12px;
+    font-weight: 700;
+    color: #435463;
+    transition: .2s;
+}
+
+.ra-menu a:hover {
+    color: var(--ra-blue);
+}
+
+.ra-header-btn {
+    background: var(--ra-blue);
+    color: #fff !important;
+    padding: 12px 18px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.ra-header-btn:hover {
+    background: var(--ra-blue-dark);
+    transform: translateY(-2px);
+}
+
+/* APRESENTAÇÃO */
+
+.ra-hero {
+    min-height: 570px;
+    padding: 75px 8%;
+    background: linear-gradient(120deg, #f7fafc, #fff 55%, #e9f2f8);
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ra-hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.ra-eyebrow {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--ra-gold);
+}
+
+.ra-blue {
+    color: var(--ra-blue);
+}
+
+.ra-hero h1 {
+    font-family: Oswald, sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(58px, 7vw, 88px);
+    line-height: .98;
+    color: var(--ra-blue-deep);
+    margin: 22px 0;
+}
+
+.ra-hero h1 em {
+    color: var(--ra-blue);
+    font-style: normal;
+}
+
+.ra-hero-content>p {
+    max-width: 550px;
+    color: var(--ra-muted);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.ra-primary-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 23px;
+    background: var(--ra-blue);
+    color: #fff !important;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 800;
+    transition: .25s;
+}
+
+.ra-primary-btn:hover {
+    background: var(--ra-blue-dark);
+    transform: translateY(-3px);
+}
+
+.ra-hero-visual {
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ra-hero-circle {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    border: 1px solid #bdd2e0;
+    border-radius: 50%;
+}
+
+.ra-hero-circle::after {
+    content: "";
+    position: absolute;
+    inset: 16px;
+    border: 1px dashed #c9dbe8;
+    border-radius: 50%;
+}
+
+.ra-hero-logo {
+    width: 245px;
+    height: 245px;
+    border-radius: 50%;
+    background: #fff;
+    border: 9px solid #fff;
+    box-shadow: 0 25px 60px rgba(0, 57, 98, .18);
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ra-hero-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ra-vertical {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    writing-mode: vertical-rl;
+    font-family: Oswald, sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #cbd9e2;
+}
+
+.ra-floating {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 25px;
+    background: #fff;
+    box-shadow: 0 15px 40px rgba(0, 57, 98, .13);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.ra-floating>span {
+    width: 9px;
+    height: 9px;
+    background: #27a46b;
+    border-radius: 50%;
+}
+
+.ra-floating div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ra-floating strong {
+    font-size: 11px;
+    color: var(--ra-blue-deep);
+}
+
+.ra-floating small {
+    font-size: 9px;
+    color: var(--ra-muted);
+}
+
+/* HISTÓRIA */
+
+.ra-history {
+    padding: 75px 9%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    border-bottom: 1px solid var(--ra-line);
+}
+
+.ra-history-title h2 {
+    font-family: Oswald, sans-serif;
+    color: var(--ra-blue-deep);
+    font-size: 43px;
+    line-height: 1.1;
+    margin-top: 13px;
+}
+
+.ra-history-text p {
+    font-size: 13px;
+    color: var(--ra-muted);
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+/* SEÇÕES */
+
+.ra-section {
+    padding: 95px 7%;
+    background: #fff;
+}
+
+.ra-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 38px;
+}
+
+.ra-section-heading h2 {
+    font-family: Oswald, sans-serif;
+    color: var(--ra-blue-deep);
+    font-size: 49px;
+    line-height: 1.1;
+    margin-top: 10px;
+}
+
+.ra-section-heading>p {
+    max-width: 370px;
+    font-size: 13px;
+    color: var(--ra-muted);
+    line-height: 1.8;
+}
+
+/* DESTAQUE DOS FUNDADORES */
+
+.ra-founder-feature {
+    min-height: 260px;
+    background: var(--ra-blue-deep);
+    border-radius: 12px;
+    padding: 45px 7%;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 65px;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.ra-founder-feature::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 50%;
+    right: -70px;
+    top: -100px;
+}
+
+.ra-founder-symbol {
+    width: 160px;
+    height: 160px;
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 50%;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ra-founder-symbol span {
+    font-family: Oswald, sans-serif;
+    font-size: 65px;
+    color: #fff;
+}
+
+.ra-founder-symbol small {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #a9c8dd;
+}
+
+.ra-founder-feature>div:last-child {
+    position: relative;
+    z-index: 2;
+}
+
+.ra-founder-feature h3 {
+    font-family: Oswald, sans-serif;
+    font-size: 37px;
+    line-height: 1.1;
+    margin: 12px 0;
+}
+
+.ra-founder-feature p {
+    color: #c3d7e4;
+    font-size: 12px;
+    line-height: 1.7;
+    max-width: 430px;
+}
+
+/* CARTÕES DAS PESSOAS */
+
+.ra-people-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.ra-person-card {
+    border: 1px solid var(--ra-line);
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s;
+    box-shadow: 0 8px 30px rgba(14, 50, 75, .04);
+}
+
+.ra-person-card:hover {
+    transform: translateY(-7px);
+    border-color: #a8c6d9;
+    box-shadow: 0 18px 40px rgba(14, 50, 75, .12);
+}
+
+.ra-person-photo {
+    height: 245px;
+    background: linear-gradient(145deg, #dceaf3, #edf3f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.ra-person-photo::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border: 1px solid rgba(0, 86, 157, .12);
+    border-radius: 50%;
+}
+
+.ra-person-photo::after {
+    content: "";
+    position: absolute;
+    width: 175px;
+    height: 175px;
+    border: 1px dashed rgba(0, 86, 157, .15);
+    border-radius: 50%;
+}
+
+.ra-person-photo span {
+    font-family: Oswald, sans-serif;
+    font-size: 65px;
+    color: var(--ra-blue);
+    position: relative;
+    z-index: 1;
+}
+
+.ra-person-photo small {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #8299a9;
+    margin-top: 3px;
+    position: relative;
+    z-index: 1;
+}
+
+.ra-person-info {
+    padding: 22px 19px;
+}
+
+.ra-person-info>span {
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    color: var(--ra-blue);
+}
+
+.ra-person-info h3 {
+    font-family: Oswald, sans-serif;
+    font-size: 23px;
+    color: var(--ra-blue-deep);
+    margin: 8px 0;
+}
+
+.ra-person-info p {
+    color: var(--ra-muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+/* DESENVOLVEDORES */
+
+.ra-developers {
+    padding: 95px 7%;
+    background: var(--ra-light);
+}
+
+.ra-developers-heading h2 {
+    color: #fff;
+}
+
+.ra-developers-heading>p {
+    color: #c5d7e3;
+}
+
+.ra-developers .ra-section-heading {
+    background: var(--ra-blue-deep);
+    padding: 38px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.ra-developers .ra-eyebrow {
+    color: #a9d2ee;
+}
+
+.ra-dev-card .ra-person-photo {
+    background: linear-gradient(145deg, #dceaf3, #f4f8fb);
+}
+
+.ra-dev-card .ra-person-info h3 {
+    font-size: 21px;
+}
+
+/* FINAL */
+
+.ra-final {
+    padding: 90px 7%;
+    background: linear-gradient(120deg, #f4f8fb, #fff);
+    text-align: center;
+}
+
+.ra-final h2 {
+    max-width: 650px;
+    margin: 15px auto;
+    font-family: Oswald, sans-serif;
+    font-size: 48px;
+    line-height: 1.1;
+    color: var(--ra-blue-deep);
+}
+
+.ra-final p {
+    font-size: 13px;
+    color: var(--ra-muted);
+    margin: 15px 0 25px;
+}
+
+/* RODAPÉ */
+
+.ra-footer {
+    background: #021e35;
+    color: #fff;
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.ra-footer .ra-brand img {
+    border: 0;
+}
+
+.ra-footer .ra-brand strong {
+    color: #fff;
+}
+
+.ra-footer .ra-brand small {
+    color: #9eb4c4;
+}
+
+.ra-footer>p {
+    color: #8fa7b8;
+    font-size: 10px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1000px) {
+
+    .ra-hero {
+        grid-template-columns: 1fr 1fr;
+        padding: 65px 6%;
+    }
+
+    .ra-people-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ra-history {
+        gap: 40px;
+    }
+
+}
+
+@media (max-width: 760px) {
+
+    .ra-header {
+        flex-wrap: wrap;
+        padding: 12px 5%;
+    }
+
+    .ra-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .ra-header-btn {
+        font-size: 10px;
+        padding: 10px 12px;
+    }
+
+    .ra-hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+    }
+
+    .ra-hero h1 {
+        font-size: 58px;
+    }
+
+    .ra-hero-visual {
+        margin-top: 30px;
+    }
+
+    .ra-history {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 65px 7%;
+    }
+
+    .ra-section,
+    .ra-developers {
+        padding: 70px 6%;
+    }
+
+    .ra-section-heading {
+        display: block;
+    }
+
+    .ra-section-heading>p {
+        margin-top: 15px;
+    }
+
+    .ra-section-heading h2 {
+        font-size: 42px;
+    }
+
+    .ra-founder-feature {
+        gap: 25px;
+        padding: 30px;
+    }
+
+    .ra-founder-symbol {
+        width: 110px;
+        height: 110px;
+    }
+
+    .ra-founder-symbol span {
+        font-size: 45px;
+    }
+
+    .ra-developers .ra-section-heading {
+        padding: 28px;
+    }
+
+    .ra-final h2 {
+        font-size: 40px;
+    }
+
+    .ra-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .ra-brand img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .ra-brand strong {
+        font-size: 15px;
+    }
+
+    .ra-brand small {
+        font-size: 7px;
+    }
+
+    .ra-menu {
+        gap: 13px;
+    }
+
+    .ra-menu a {
+        font-size: 10px;
+    }
+
+    .ra-hero {
+        padding: 55px 6%;
+    }
+
+    .ra-hero h1 {
+        font-size: 48px;
+    }
+
+    .ra-hero-visual {
+        height: 310px;
+    }
+
+    .ra-hero-circle {
+        width: 265px;
+        height: 265px;
+    }
+
+    .ra-hero-logo {
+        width: 190px;
+        height: 190px;
+    }
+
+    .ra-vertical {
+        display: none;
+    }
+
+   
+
+    .ra-floating {
+        right: 0;
+        bottom: 0;
+        transform: scale(.88);
+        transform-origin: right bottom;
+    }
+
+    .ra-history-title h2 {
+        font-size: 36px;
+    }
+
+    .ra-people-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .ra-person-photo {
+        height: 270px;
+    }
+
+    .ra-founder-feature {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ra-founder-feature h3 {
+        font-size: 32px;
+    }
+
+    .ra-section-heading h2 {
+        font-size: 37px;
+    }
+
+    .ra-final h2 {
+        font-size: 34px;
+    }
+
+}

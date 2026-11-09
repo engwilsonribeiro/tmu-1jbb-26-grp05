@@ -1,4 +1,4 @@
-:root{
+ :root{
   --blue:#00569D;
   --blue-dark:#003D70;
   --blue-deep:#032B4D;
@@ -1337,5 +1337,38 @@ footer>p{
   .auction button{
     width:100%;
   }
+  /* BOTÃO CONHEÇA NOSSA EQUIPE - coloquei 09/11 */
+
+.about-team-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: var(--blue-deep);
+    padding: 15px 25px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 12px;
+    transition: .25s;
+    width: fit-content;
+    
+}
+/* 
+.about-team-btn:hover {
+    background: #e9f2f8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+}
+
+@media (max-width: 760px) {
+    .about-team-btn {
+        width: 100%;
+        text-align: center;
+    }
+} */
+
+
+
 
 }
