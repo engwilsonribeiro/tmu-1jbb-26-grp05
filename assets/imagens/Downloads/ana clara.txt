@@ -1,0 +1,6 @@
+Qual app usa https?
+
+Ticketmaster = https
+google = https
+roblox = https
+site da compra de ingresso de barretos = https

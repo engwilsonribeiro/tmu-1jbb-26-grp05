@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Banho e Tosa</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0d1b2a;
+            --surface: #112a46;
+            --surface-strong: #1b3b65;
+            --accent: #008fd1;
+            --accent-strong: #219ebc;
+            --text: #2bb6bb;
+            --muted: #94a6b8;
+            --error: #ffb703;
+            --border: rgba(255,255,255,0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Inter, system-ui, sans-serif;
+            background: radial-gradient(circle at top, rgba(142,202,230,0.18), transparent 30%),
+                        linear-gradient(180deg, #0b132b 0%, #0d1b2a 100%);
+            color: var(--text);
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+        }
+
+        main {
+            width: min(100%, 540px);
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(17,42,70,0.96), rgba(23,53,91,0.98));
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+            padding: 2rem;
+        }
+
+        h1 {
+            margin: 0 0 0.5rem;
+            font-size: clamp(1.75rem, 2.5vw, 2.4rem);
+        }
+
+        p {
+            margin: 0 0 1.8rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        form {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        label {
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text);
+            padding: 0.95rem 1rem;
+            transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+            font: inherit;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: rgb(77, 77, 77);
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(142,202,230,0.16);
+            transform: translateY(-1px);
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .fieldset {
+            display: grid;
+            gap: 1rem;
+            padding: 1.25rem 1.15rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .fieldset legend {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .submit-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        button {
+            appearance: none;
+            border: none;
+            border-radius: 14px;
+            padding: 0.95rem 1.4rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+            color: #051923;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.05);
+            box-shadow: 0 18px 34px rgba(33, 158, 188, 0.25);
+        }
+
+        .hint {
+            font-size: 0.86rem;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="card" aria-labelledby="form-title">
+            <header>
+                <h1 id="form-title">Agendamento de Banho e Tosa</h1>
+                <p>Preencha os dados do pet para reservar o serviço com segurança e conforto.</p>
+            </header>
+
+            <form action="#" method="post" novalidate>
+                <div>
+                    <label for="pet-name">Nome do Pet</label>
+                    <input id="pet-name" name="pet-name" type="text" placeholder="Ex: Mel" required autocomplete="off" />
+                </div>
+
+                <div>
+                    <label for="pet-breed">Raça</label>
+                    <input id="pet-breed" name="pet-breed" type="text" placeholder="Ex: Golden Retriever" required />
+                </div>
+
+                <div>
+                    <label for="service-type">Tipo de Serviço</label>
+                    <select id="service-type" name="service-type" required>
+                        <option value="" disabled selected>Selecione o serviço</option>
+                        <option value="banho">Banho completo</option>
+                        <option value="tosa">Tosa básica</option>
+                        <option value="banho-tosa">Banho + Tosa</option>
+                        <option value="higiene">Higiene e cuidados</option>
+                    </select>
+                </div>
+
+                <fieldset class="fieldset">
+                    <legend>Observações de comportamento</legend>
+                    <label for="pet-notes">Conte se o pet tem aversão a ruídos ou se dá bem com outros animais</label>
+                    <textarea id="pet-notes" name="pet-notes" placeholder="Ex: Fica nervoso com secador, mas adora carinho." rows="5"></textarea>
+                </fieldset>
+
+                <div class="submit-group">
+                    <span class="hint">Todos os campos com * são obrigatórios.</span>
+                    <button type="submit">Confirmar Agendamento</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+HTML:
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo 1 - Semáforo Interativo</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <h1>🚦 Semáforo Interativo</h1>
+
+  <div class="semaforo">
+    <div id="vermelho" class="luz"></div>
+    <div id="amarelo" class="luz"></div>
+    <div id="verde" class="luz"></div>
+  </div>
+
+  <div class="botoes">
+    <button id="btnVermelho" type="button">Vermelho</button>
+    <button id="btnAmarelo" type="button">Amarelo</button>
+    <button id="btnVerde" type="button">Verde</button>
+    <button id="btnApagar" type="button">Apagar</button>
+  </div>
+
+  <script>
+    const luzes = document.querySelectorAll('.luz');
+    const botoes = {
+      btnVermelho: 'vermelho',
+      btnAmarelo: 'amarelo',
+      btnVerde: 'verde'
+    };
+
+    function limparLuzes() {
+      luzes.forEach((luz) => {
+        luz.classList.remove('vermelho-ativo', 'amarelo-ativo', 'verde-ativo');
+      });
+    }
+
+    function ativarLuz(cor) {
+      limparLuzes();
+      const luzSelecionada = document.getElementById(cor);
+      if (luzSelecionada) {
+        luzSelecionada.classList.add(`${cor}-ativo`);
+      }
+    }
+
+    Object.entries(botoes).forEach(([id, cor]) => {
+      const botao = document.getElementById(id);
+      if (botao) {
+        botao.addEventListener('click', () => ativarLuz(cor));
+      }
+    });
+
+    const botaoApagar = document.getElementById('btnApagar');
+    if (botaoApagar) {
+      botaoApagar.addEventListener('click', limparLuzes);
+    }
+  </script>
+</body>
+</html>

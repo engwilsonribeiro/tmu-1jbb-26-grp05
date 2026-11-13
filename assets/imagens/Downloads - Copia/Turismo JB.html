@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo José Bonifácio</title>
+
+    <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .topo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #024f38;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-sizing: border-box;
+        z-index: 1000;
+    }
+
+    .topo .logo {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .topo .botao-cadastro {
+        background-color: #060504;
+        border: none;
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .topo .botao-cadastro:hover {
+        background-color: #000000;
+    }
+
+    .conteudo {
+        margin-top: 80px;
+        padding: 20px;
+    }
+
+    .busca-viagem-container {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 40px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .busca-viagem {
+        background-color: #f5f5f5;
+        border: 2px solid #024f38;
+        border-radius: 8px;
+        padding: 30px;
+        max-width: 600px;
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .busca-viagem h2 {
+        margin-top: 0;
+        color: #024f38;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: #024f38;
+        box-shadow: 0 0 5px rgba(2, 79, 56, 0.3);
+    }
+
+    .viajantes-grupo {
+        display: flex;
+        gap: 20px;
+    }
+
+    .viajante-tipo {
+        flex: 1;
+    }
+
+    .viajante-tipo label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .viajante-tipo input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .botao-buscar {
+        background-color: #024f38;
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .botao-buscar:hover {
+        background-color: #013d2b;
+    }
+
+    .destinos-procurados {
+        margin-top: 50px;
+    }
+
+    .destinos-procurados h2 {
+        color: #024f38;
+        margin-bottom: 30px;
+    }
+
+    .grid-destinos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+
+    .card-destino {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+
+    .card-destino:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-destino img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-destino-info {
+        padding: 15px;
+    }
+
+    .card-destino-info h3 {
+        margin: 0 0 10px 0;
+        color: #024f38;
+        font-size: 18px;
+    }
+
+    .card-destino-info p {
+        margin: 0;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .agenda-eventos {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .agenda-eventos h2 {
+        color: #024f38;
+        margin-bottom: 30px;
+    }
+
+    .grid-eventos {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card-evento {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        display: flex;
+        height: 150px;
+    }
+
+    .card-evento:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-evento img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    .card-evento-info {
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card-evento-info h3 {
+        margin: 0 0 10px 0;
+        color: #024f38;
+        font-size: 18px;
+    }
+
+    .card-evento-info p {
+        margin: 0;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .card-evento-info .data-evento {
+        color: #024f38;
+        font-weight: bold;
+        margin-top: 8px;
+    }
+
+    .imagem-busca {
+        flex: 1;
+        min-width: 300px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        height: 400px;
+    }
+
+    .imagem-busca img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+        .busca-viagem-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .imagem-busca {
+            min-width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+
+<div class="topo">
+    <div class="logo">Turismo JB</div>
+    <button class="botao-cadastro">Cadastre-se</button>
+</div>
+
+<div class="conteudo">
+    <div class="busca-viagem-container">
+        <div class="busca-viagem">
+            <h2>Buscar Viagem</h2>
+        <form>
+            <div class="form-group">
+                <label for="destino">Para onde você vai?</label>
+                <input type="text" id="destino" placeholder="Digite o destino..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input type="date" id="data" required>
+            </div>
+
+            <div class="form-group">
+                <label>Viajantes</label>
+                <div class="viajantes-grupo">
+                    <div class="viajante-tipo">
+                        <label for="adultos">Adultos</label>
+                        <input type="number" id="adultos" min="0" value="1">
+                    </div>
+                    <div class="viajante-tipo">
+                        <label for="criancas">Crianças</label>
+                        <input type="number" id="criancas" min="0" value="0">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="botao-buscar">Buscar Viagem</button>
+        </form>
+        </div>
+        <div class="imagem-busca">
+            <img src="jose-bonifacio-cidade.jpg" alt="Busca de Viagens">
+        </div>
+    </div>
+
+    <div class="destinos-procurados">
+        <h2>Destinos Mais Procurados</h2>
+        <div class="grid-destinos">
+            <div class="card-destino">
+                <img src="images (1).jfif" alt="Igreja Matriz">
+                <div class="card-destino-info">
+                    <h3>Igreja Matriz</h3>
+                    <p>Igreja ortodoxa, considerada uma mãe nas suas funções em nutrir e proteger.</p>
+                </div>
+            </div>
+
+            <div class="card-destino">
+                <img src="premier-garden-hotel.jpg" alt="Hotel Premier">
+                <div class="card-destino-info">
+                    <h3>Hotel Premier</h3>
+                    <p> Boa localização,hotel com elevador, quartos com ar condicionado e frigobar, estacionamento próprio funcionário educado.
+                        @premiergardenhotel
+</p>
+                </div>
+            </div>
+
+            <div class="card-destino">
+                <img src="padoca-paes-e-doces.jpg" alt="Padoca">
+                <div class="card-destino-info">
+                    <h3>Padoca</h3>
+                    <p>Cafeteria feita com muito amor e carinho
+                        @padocajb
+                    </p>
+                </div>
+            </div>
+
+            <div class="card-destino">
+                <img src="unnamed.webp" alt="Me Sushi">
+                <div class="card-destino-info">
+                    <h3>Me Sushi</h3>
+                    <p>Um dos melhores restaurantes japonês da região. @mesushi_jb</p>
+                </div>
+            </div>
+           
+            </div>
+        </div>
+    </div>
+
+    <div class="agenda-eventos">
+        <h2>Agenda de Eventos</h2>
+        <div class="grid-eventos">
+            <div class="card-evento">
+                <img src="images.jfif" alt="Evento 1">
+                <div class="card-evento-info">
+                    <h3>Juninão 2026</h3>
+                    <p>Aproveite o juninão com 
+ 18/06 – Mato Grosso & Mathias
+ 19/06 – CountryBeat
+ 20/06 – Guilherme & Santiago
+ 21/06 – Danilo & Davi + Jiraya Uai
+ no recinto João Orsi. Entrada gratuita!
+</p>
+                    <div class="data-evento">18 a 21 de junho</div>
+                </div>
+            </div>
+
+          <div class="card-evento">
+                <img src="evento2.jpg" alt="Evento 2">
+                <div class="card-evento-info">
+                    <h3>Noite italiana </h3>
+                    <p>é um evento cultural e gastronômico tradicional que ocorre anualmente em setembro. A festividade faz parte do calendário oficial do município, integrando a programação da Festa da Fraternidade, que celebra também o feriado municipal do Dia da Fraternidade.</p>
+                    <div class="data-evento">setembro</div>
+                </div>
+            </div>
+
+            <div class="card-evento">
+                <img src="evento3.jpg" alt="Evento 3">
+                <div class="card-evento-info">
+                    <h3>Caminhada em Louvor a Nossa Senhora Aparecida</h3>
+                    <p>O principal evento de caminhada religiosa em José Bonifácio,. Trata-se da tradicional Caminhada da Fé</p>
+                    <div class="data-evento">12 de outubro </div>
+                </div>
+            </div>
+
+            <div class="card-evento">
+                <img src="evento4.jpg" alt="Evento 4">
+                <div class="card-evento-info">
+                    <h3>Festival de Cultura e Artes Integradas</h3>
+                    <p> Evento de fim de ano realizado na Praça da Matriz, reunindo música, feiras e intervenções culturais abertas ao público..</p>
+                    <div class="data-evento">Dezembro</div>
+                </div>
+</body>
+</html>
