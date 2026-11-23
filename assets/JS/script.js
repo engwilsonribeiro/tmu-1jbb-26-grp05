@@ -150,6 +150,10 @@ function openAnimal(
   expiry
 ) {
 
+  const modalImg = document.getElementById("modalImg");
+  const fallbackImg = "assets/imagens/touro.png";
+  const safeImg = img || fallbackImg;
+
   document.getElementById("modalName").textContent = name;
 
   document.getElementById("modalType").textContent = type;
@@ -162,7 +166,12 @@ function openAnimal(
 
   document.getElementById("modalExpiry").textContent = expiry;
 
-  document.getElementById("modalImg").src = img;
+  modalImg.onerror = () => {
+    modalImg.src = fallbackImg;
+    modalImg.onerror = null;
+  };
+
+  modalImg.src = safeImg;
 
   document
     .getElementById("animalModal")
